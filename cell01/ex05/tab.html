@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  hr {width: 1000000000%;}
+  * {
+    box-sizing: border-box;
+  }
+
+  .box {
+    float: left;
+    width: 33.33%;
+    padding: 20px;
+    padding-left: 10px;
+  }
+
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  p {font-size: 13px;}
+
+</style>
+</head>
+  <body>
+    <p><hr></p>
+    <div class="clearfix">
+          <div class="box" style="background-color:green">
+            <p>First cell</p>
+            </div>
+              <div class="box" style="background-color:orange">
+            <p>Second cell</p>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>
+
+
