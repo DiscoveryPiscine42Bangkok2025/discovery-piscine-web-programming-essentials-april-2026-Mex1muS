@@ -1,0 +1,9 @@
+button {
+    color: white;
+    background-color: black;
+    box-shadow: 100;
+}
+
+.back {
+    transition: background-color 0.5s;
+}
