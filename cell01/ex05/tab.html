@@ -14,13 +14,15 @@
     padding-left: 10px;
     border-radius: 1%;
     border: 1px solid black;
+    text-align: center;
   }
 
-  .clearfix::after {
-    content: "";
+  .clearfix {
+    display: flex;          
+    justify-content: center;
     clear: both;
-    display: table;
   }
+
 
   p {font-size: 13px;}
 
