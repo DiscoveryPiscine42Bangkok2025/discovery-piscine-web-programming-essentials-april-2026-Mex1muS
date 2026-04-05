@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<style>
-  hr {width: 100%;}
-  * {
-    box-sizing: border-box;
-  }
+  <style>
+    hr {
+      width: 100%;
+    }
 
-  .box {
-    float: left;
-    width: 33.33%;
-    padding: 20px;
-    padding-left: 10px;
-    border-radius: 1%;
-    border: 1px solid black;
-    text-align: center;
-  }
+    * {
+      box-sizing: border-box;
+    }
 
-  .clearfix {
-    display: flex;          
-    justify-content: center;
-    clear: both;
-  }
+    .box {
+      float: left;
+      width: 33.33%;
+      padding: 20px;
+      padding-left: 10px;
+      border-radius: 1%;
+      border: 1px solid black;
+      text-align: center;
+    }
+
+    .clearfix {
+      display: flex;
+      justify-content: center;
+      clear: both;
+    }
 
 
-  p {font-size: 13px;}
-
-</style>
+    p {
+      font-size: 13px;
+    }
+  </style>
 </head>
-  <body>
-    <p><hr></p>
-    <div class="clearfix">
-          <div class="box" style="background-color:green">
-            <p>First cell</p>
-            </div>
-              <div class="box" style="background-color:orange">
-            <p>Second cell</p>
-          </div>
-        </div>
+
+<body>
+  <p>
+    <hr>
+  </p>
+  <div class="clearfix">
+    <div class="box" style="background-color:green">
+      <p>First cell</p>
     </div>
-  </body>
+    <div class="box" style="background-color:orange">
+      <p>Second cell</p>
+    </div>
+  </div>
+  </div>
+</body>
+
 </html>
-
-

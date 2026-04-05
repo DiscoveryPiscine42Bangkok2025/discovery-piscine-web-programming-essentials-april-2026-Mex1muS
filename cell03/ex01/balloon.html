@@ -1,49 +1,77 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-            body{
-                background-color: solid white;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 0;
-                height: 100vh;
-            }
-            #balloon {
+
+<head>
+    <style>
+        body {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            height: 100vh;
+        }
+
+        #balloon {
             border-radius: 50%;
             background-color: #04AA6D;
-            padding: 20px; 
+            padding: 20px;
             width: 200px;
-            height: 200px; 
+            height: 200px;
             cursor: pointer;
             border: none;
             transition: 0.2s;
-            box-shadow: inset;
-            }
-        </style>
-    </head>
-    <body>
-        <div>
-            <button id="balloon" type="button" onclick="increase()"></button>
-        </div>
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button id="balloon" type="button" onclick="increase()"></button>
+    </div>
     <script>
         let balloon = document.getElementById("balloon");
-        let clickCount =0;
+        let clickCount = 0;
         const colors = ["red", "green", "blue"];
+        let currentWidth = balloon.offsetWidth;
+        let currentHeight = balloon.offsetHeight;
+        let colorIndex = clickCount % colors.length;
 
-        function increase(){
+        function increase() {
             let newWidth = balloon.clientWidth + 10;
             let newHeight = balloon.clientHeight + 10;
-            
+
             balloon.style.width = newWidth + "px";
-            balloon.style.height = newHeight + "px";}
+            balloon.style.height = newHeight + "px";
+
+            if (balloon.style.width >= "420px") {
+                balloon.style.width = "200px"
+                balloon.style.height = "200px"
+            }
+        }
 
         balloon.addEventListener('click', () => {
-        let colorIndex = clickCount % colors.length;
-        balloon.style.backgroundColor = colors[colorIndex];
-        clickCount++;
-            });
-    </script> 
-    </body>
+            balloon.style.backgroundColor = colors[colorIndex];
+            colorIndex = (colorIndex +3)%3
+            clickCount++;
+        });
+
+        balloon.onmouseleave = () => {
+
+            let currentW = balloon.clientWidth;
+            let currentH = balloon.clientHeight;
+
+            if (currentW > 200) {
+                balloon.style.width = (currentW - 5) + "px";
+                balloon.style.height = (currentH - 5) + "px";
+            
+            colorIndex = (colorIndex -1 +3) %3
+            balloon.style.backgroundColor = colors[colorIndex]
+
+            }
+
+        };
+    </script>
+</body>
+
 </html>
