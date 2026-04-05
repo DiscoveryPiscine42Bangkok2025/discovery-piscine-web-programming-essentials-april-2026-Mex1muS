@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Calculator</h1>
+    <form>
+        <label>First num:</label>
+        <input type="text" id="fnum"><br><br>
+
+        <label>Calc:</label>
+        <select id="calc">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select><br><br>
+
+        <label>Last num:</label>
+        <input type="text" id="lnum"><br><br>
+
+        <button type="button" onclick="calculate()">Submit</button>
+    </form>
+
+    <script>
+        function calculate() {
+            let n1 = parseFloat(document.getElementById("fnum").value);
+            let n2 = parseFloat(document.getElementById("lnum").value);
+            let op = document.getElementById("calc").value;
+            let result = 0;
+
+            if (isNaN(n1) || isNaN(n2) || n1 < 0 || n2 < 0) {
+                alert("Error :(");
+                return;
+            }
+
+
+            if (op === "-") {
+                result = n1 - n2;
+            } else if (op === "+") {
+                result = n1 + n2;
+            } else if (op === "*") {
+                result = n1 * n2;
+            } else if (op === "/") {
+                result = n1 / n2;
+            } else if (op === "%") {
+                result = n1 % n2;
+            }
+            
+            alert(result);
+        }
+
+        setTimeout(function() {
+            alert("Please, use me.....");
+        }, 30000);
+
+    </script>
+</body>
+</html>

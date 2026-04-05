@@ -51,8 +51,8 @@
         }
 
         balloon.addEventListener('click', () => {
+            colorIndex = (colorIndex + 1) % colors.length;
             balloon.style.backgroundColor = colors[colorIndex];
-            colorIndex = (colorIndex +3)%3
             clickCount++;
         });
 
