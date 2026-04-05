@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-color: solid white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                height: 100vh;
+            }
+            #balloon {
+            border-radius: 50%;
+            background-color: #04AA6D;
+            padding: 20px; 
+            width: 200px;
+            height: 200px; 
+            cursor: pointer;
+            border: none;
+            transition: 0.2s;
+            box-shadow: inset;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <button id="balloon" type="button" onclick="increase()"></button>
+        </div>
+    <script>
+        let balloon = document.getElementById("balloon");
+        let clickCount =0;
+        const colors = ["red", "green", "blue"];
+
+        function increase(){
+            let newWidth = balloon.clientWidth + 10;
+            let newHeight = balloon.clientHeight + 10;
+            
+            balloon.style.width = newWidth + "px";
+            balloon.style.height = newHeight + "px";}
+
+        balloon.addEventListener('click', () => {
+        let colorIndex = clickCount % colors.length;
+        balloon.style.backgroundColor = colors[colorIndex];
+        clickCount++;
+            });
+    </script> 
+    </body>
+</html>
