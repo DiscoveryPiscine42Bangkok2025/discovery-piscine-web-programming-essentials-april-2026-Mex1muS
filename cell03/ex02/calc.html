@@ -33,6 +33,10 @@
                 return;
             }
 
+            if ((op === "/" || op === "%") && n2 === 0) {
+                alert("It’s over 9000!");
+                return;
+            }
 
             if (op === "-") {
                 result = n1 - n2;
