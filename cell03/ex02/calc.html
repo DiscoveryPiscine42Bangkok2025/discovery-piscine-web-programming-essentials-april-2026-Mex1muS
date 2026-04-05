@@ -28,7 +28,7 @@
             let op = document.getElementById("calc").value;
             let result = 0;
 
-            if (isNaN(n1) || isNaN(n2) || n1 < 0 || n2 < 0) {
+            if (isNaN(n1) || isNaN(n2) || n1 < 0 || n2 < 0 || n1 === "" || n2 === "" || Number(n1) != BigInt || Number(n2) != BigInt) {
                 alert("Error :(");
                 return;
             }
