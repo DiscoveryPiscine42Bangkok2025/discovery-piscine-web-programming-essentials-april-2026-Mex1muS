@@ -83,7 +83,3 @@ function newElement() {
 }
 
 loadList();
-<<<<<<< HEAD
-=======
-
->>>>>>> 73cf69237ba33f84fe70a44ed72a4255be18097b
