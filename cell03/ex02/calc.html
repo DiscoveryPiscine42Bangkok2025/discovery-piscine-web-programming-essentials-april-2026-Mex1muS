@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Calculator</title>
+</head>
 <body>
     <h1>Calculator</h1>
+
     <form>
         <label>First num:</label>
         <input type="text" id="fnum"><br><br>
@@ -18,30 +22,36 @@
         <label>Last num:</label>
         <input type="text" id="lnum"><br><br>
 
-        <button type="button" onclick="calculate()">Submit</button>
+        <input type="button" value="Try me!" onclick="calculate()">
     </form>
 
     <script>
         function calculate() {
-            let n1 = parseFloat(document.getElementById("fnum").value);
-            let n2 = parseFloat(document.getElementById("lnum").value);
+            let n1 = parseInt(document.getElementById("fnum").value);
+            let n2 = parseInt(document.getElementById("lnum").value);
             let op = document.getElementById("calc").value;
-            let result = 0;
+            let result;
 
-            if (isNaN(n1) || isNaN(n2) || n1 < 0 || n2 < 0) {
+            if (
+                isNaN(n1) || 
+                isNaN(n2) || 
+                n1 < 0 || 
+                n2 < 0
+            ) {
                 alert("Error :(");
                 return;
             }
 
             if ((op === "/" || op === "%") && n2 === 0) {
                 alert("It’s over 9000!");
+                console.log("It’s over 9000!");
                 return;
             }
 
-            if (op === "-") {
-                result = n1 - n2;
-            } else if (op === "+") {
+            if (op === "+") {
                 result = n1 + n2;
+            } else if (op === "-") {
+                result = n1 - n2;
             } else if (op === "*") {
                 result = n1 * n2;
             } else if (op === "/") {
@@ -49,14 +59,14 @@
             } else if (op === "%") {
                 result = n1 % n2;
             }
-            
+
             alert(result);
+            console.log(result);
         }
 
-        setTimeout(function() {
-            alert("Please, use me.....");
+        setInterval(function () {
+            alert("Please, use me...");
         }, 30000);
-
     </script>
 </body>
 </html>

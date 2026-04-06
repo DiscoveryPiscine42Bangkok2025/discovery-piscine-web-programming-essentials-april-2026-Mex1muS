@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="background.css">
+<html>
+
+<body>
+
+    <h1>The button Element</h1>
+
+    <body class="back">
+        <button onclick="changeColor()">เปลี่ยนสีพื้นหลัง</button>
+    </body>
+    <script>
+        function changeColor() {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+
+            document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        }
+    </script>
+
+</html>

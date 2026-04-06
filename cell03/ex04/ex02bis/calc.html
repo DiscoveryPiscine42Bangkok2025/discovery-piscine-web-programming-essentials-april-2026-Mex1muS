@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1>Calculator</h1>
+
+    <form>
+        <label>First num:</label>
+        <input type="text" id="fnum"><br><br>
+
+        <label>Calc:</label>
+        <select id="calc">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select><br><br>
+
+        <label>Last num:</label>
+        <input type="text" id="lnum"><br><br>
+
+        <input type="button" value="Try me!" id="btnTry">
+    </form>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#btnTry").click(function () {
+
+                let n1 = parseInt($("#fnum").val());
+                let n2 = parseInt($("#lnum").val());
+                let op = $("#calc").val();
+                let result;
+
+                if (
+                    isNaN(n1) ||
+                    isNaN(n2) ||
+                    n1 < 0 ||
+                    n2 < 0
+                ) {
+                    alert("Error :(");
+                    return;
+                }
+
+                if ((op === "/" || op === "%") && n2 === 0) {
+                    alert("It’s over 9000!");
+                    console.log("It’s over 9000!");
+                    return;
+                }
+
+                if (op === "+") {
+                    result = n1 + n2;
+                } else if (op === "-") {
+                    result = n1 - n2;
+                } else if (op === "*") {
+                    result = n1 * n2;
+                } else if (op === "/") {
+                    result = n1 / n2;
+                } else if (op === "%") {
+                    result = n1 % n2;
+                }
+
+                alert(result);
+                console.log(result);
+            });
+
+            setInterval(function () {
+                alert("Please, use me...");
+            }, 30000);
+
+        });
+    </script>
+</body>
+</html>
