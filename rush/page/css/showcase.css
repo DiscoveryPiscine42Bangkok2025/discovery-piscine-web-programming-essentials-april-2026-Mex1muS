@@ -1,0 +1,68 @@
+/* ══════════════════════════════
+   SHOWCASE & SKILLS
+   Grid cards and skill tags
+══════════════════════════════ */
+
+/* — Showcase grid — */
+.showcase-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.showcase-item {
+    background: rgba(0, 100, 140, 0.18);
+    border: 1px solid rgba(0, 170, 210, 0.18);
+    border-radius: 10px;
+    padding: 18px 20px;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.showcase-item:hover {
+    background: rgba(0, 130, 170, 0.25);
+    border-color: rgba(0, 200, 240, 0.35);
+}
+
+.showcase-item h4 {
+    margin: 0 0 6px 0;
+    color: #b8f0ff;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+}
+
+.showcase-item .meta {
+    font-size: 0.8rem;
+    color: rgba(120, 190, 220, 0.65);
+    margin-bottom: 8px;
+}
+
+.showcase-item p {
+    margin: 0;
+    color: rgba(180, 215, 240, 0.78);
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+/* — Skills — */
+.skills-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.skill-tag {
+    background: rgba(0, 120, 160, 0.32);
+    border: 1px solid rgba(0, 180, 220, 0.3);
+    color: #b8f0ff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.skill-tag:hover {
+    background: rgba(0, 160, 210, 0.45);
+    border-color: rgba(0, 210, 255, 0.55);
+}

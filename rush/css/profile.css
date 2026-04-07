@@ -1,0 +1,65 @@
+.image-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px; /*ระยะห่างระหว่างรูป*/
+    flex-wrap: wrap; /*ทําให้รูปเรียงลงมา*/
+    max-width: 1200px; /*ความกว้างสูงสุด*/
+    margin: 0 auto; /*จัดกลาง*/
+    padding: 20px;
+    min-height: 100vh; /*ความสูงขั้นต่ำ*/
+}
+
+.column {
+    flex: 0 1 auto;
+    min-width: 300px; /*ความกว้างขั้นต่ำ*/
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* Add these lines */
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.column:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.column img {
+    width: min(500px, 80vw); /*ความกว้าง*/
+    height: min(500px, 80vw); /*ความสูง*/
+    object-fit: cover; /*การจัดรูป*/
+    display: inline-block; /*การจัดรูป*/
+    border-radius: 50%; /*การทําให้รูปกลม*/
+    margin: 0 auto; /*การจัดกลาง*/
+    box-shadow: 0 0 0 3px rgba(0, 180, 220, 0.25), 0 0 32px rgba(0, 120, 180, 0.3);
+    transition: box-shadow 0.4s ease;
+}
+
+.column img:hover {
+    box-shadow: 0 0 0 4px rgba(0, 200, 240, 0.4), 0 0 48px rgba(0, 150, 210, 0.5);
+}
+
+.profile-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+    .image-row {
+        gap: 48px; /*ระยะห่างระหว่างรูป*/
+        padding: 20px 12px; /*พื้นที่*/
+        min-height: auto; /*ความสูงขั้นต่ำ*/
+        padding-top: 40px; /*ระยะห่างบน*/
+        padding-bottom: 60px; /*ระยะห่างล่าง*/
+    }
+
+    .column {
+        min-width: 0;
+        width: 100%;
+    }
+}

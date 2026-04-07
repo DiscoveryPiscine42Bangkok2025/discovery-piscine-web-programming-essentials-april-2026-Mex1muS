@@ -1,0 +1,232 @@
+/* 1. GLOBAL STYLES */
+body {
+  background-image: url('https://cdn.imgchest.com/files/94c45025283d.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  margin: 0;
+  min-height: 100vh;
+}
+
+h2,
+p {
+  margin: 20px;
+}
+
+/* 2. NAVIGATION BAR CONTAINER */
+ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /* Deep midnight navy matching the background's darkest tones,
+     with a subtle frosted-glass effect so the bg bleeds through */
+  background: rgba(4, 8, 30, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(0, 180, 210, 0.18);
+  box-shadow: 0 2px 24px rgba(0, 30, 80, 0.45);
+}
+
+/* 3. NAVIGATION LINKS */
+ul li a {
+  display: block;
+  color: rgba(200, 225, 255, 0.85);
+  padding: 14px 16px;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.4s ease, background 0.4s ease;
+  letter-spacing: 0.04em;
+  font-size: 0.95rem;
+}
+
+/* 4. SHIMMER EFFECT SETUP */
+ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  /* Cyan-to-teal shimmer matching the bg's light-streak highlights */
+  background: linear-gradient(90deg, transparent, #00c8e0, #7ee8f8, transparent);
+  background-size: 300% 100%;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+/* 5. HOVER ACTIONS */
+ul li a:hover {
+  color: #b8f0ff;
+  /* Matches the bg's soft cyan star-glow tones */
+  background: rgba(0, 140, 180, 0.15);
+}
+
+ul li a:hover::after {
+  opacity: 1;
+  animation: shimmer111 2s linear infinite;
+}
+
+/* 6. SHIMMER ANIMATION */
+@keyframes shimmer111 {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* 7. IMAGE ROW LAYOUT */
+.image-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* 8. IMAGE COLUMNS */
+.column {
+  flex: 0 1 auto;
+  min-width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 9. IMAGE STYLING */
+.column img {
+  width: 500px;
+  height: 500px;
+  display: inline-block;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto;
+  /* Soft cyan glow ring matching the bg's light sources */
+  box-shadow: 0 0 0 3px rgba(0, 180, 220, 0.25), 0 0 32px rgba(0, 120, 180, 0.3);
+  transition: box-shadow 0.4s ease;
+}
+
+.column img:hover {
+  box-shadow: 0 0 0 4px rgba(0, 200, 240, 0.4), 0 0 48px rgba(0, 150, 210, 0.5);
+}
+
+/* Container for the image and the dropdown */
+.profile-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+/* The Dropdown Box — matched to the deep navy/space bg with glass effect */
+.dropdown-info {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* Deep navy glass matching bg's darkest midtones */
+  background: rgba(5, 10, 38, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 170, 210, 0.22);
+  box-shadow: 0 8px 32px rgba(0, 20, 70, 0.6), 0 0 0 1px rgba(0, 120, 180, 0.12);
+
+  color: rgba(200, 230, 255, 0.9);
+  padding: 20px;
+  border-radius: 12px;
+  width: 80%;
+  z-index: 10;
+
+  /* HIDDEN STATE */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+/* Bridge fix */
+.dropdown-info::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: transparent;
+}
+
+/* Subtle cyan top accent line on the dropdown */
+.dropdown-info::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 200, 240, 0.5), transparent);
+  border-radius: 1px;
+}
+
+/* Hover action */
+.profile-container:hover .dropdown-info {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(10px);
+}
+
+/* Dropdown heading */
+.dropdown-info h3 {
+  margin: 0 0 4px 0;
+  color: #7ee8ff;
+  letter-spacing: 0.06em;
+  font-size: 1.1rem;
+}
+
+/* Dropdown paragraph */
+.dropdown-info p {
+  margin: 6px 0 0 0;
+  color: rgba(180, 215, 240, 0.8);
+  font-size: 0.9rem;
+}
+
+/* Social icons inside the dropdown */
+.dropdown-info a i {
+  color: rgba(160, 210, 240, 0.75);
+  margin: 0 6px;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.dropdown-info a i:hover {
+  color: #7ee8ff;
+}
+
+/* See More button */
+.see-more-btn {
+  display: inline-block;
+  /* Muted cyan-navy matching bg's mid-tones */
+  background: rgba(0, 120, 160, 0.35);
+  border: 1px solid rgba(0, 180, 220, 0.35);
+  color: #b8f0ff;
+  padding: 8px 18px;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+  transition: background 0.3s, border-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.see-more-btn:hover {
+  background: rgba(0, 160, 210, 0.5);
+  border-color: rgba(0, 210, 255, 0.6);
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(0, 180, 230, 0.35);
+}

@@ -1,0 +1,33 @@
+/* ══════════════════════════════
+   HERO
+   Profile image & name header
+══════════════════════════════ */
+
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.hero img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 3px rgba(0, 180, 220, 0.3), 0 0 32px rgba(0, 120, 180, 0.35);
+}
+
+.hero-text h1 {
+    margin: 0 0 6px 0;
+    font-size: 2rem;
+    color: #7ee8ff;
+    letter-spacing: 0.08em;
+    font-style: italic;
+}
+
+.hero-text p {
+    margin: 0;
+    color: rgba(180, 215, 240, 0.75);
+    font-size: 0.95rem;
+}

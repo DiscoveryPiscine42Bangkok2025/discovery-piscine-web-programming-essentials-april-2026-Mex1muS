@@ -1,0 +1,74 @@
+/* ══════════════════════════════
+   LAYOUT — with mobile support
+══════════════════════════════ */
+
+@keyframes slideFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.glass {
+    background: rgba(5, 10, 38, 0.72);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 170, 210, 0.22);
+    box-shadow: 0 8px 32px rgba(0, 20, 70, 0.6), 0 0 0 1px rgba(0, 120, 180, 0.12);
+    border-radius: 16px;
+    padding: 32px;
+    opacity: 0; 
+    animation: slideFadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.page-wrap .glass:nth-child(1) { animation-delay: 0.1s; }
+.page-wrap .glass:nth-child(2) { animation-delay: 0.2s; }
+.page-wrap .glass:nth-child(3) { animation-delay: 0.3s; }
+.page-wrap .glass:nth-child(4) { animation-delay: 0.4s; }
+.page-wrap .glass:nth-child(5) { animation-delay: 0.5s; }
+.page-wrap .glass:nth-child(6) { animation-delay: 0.6s; }
+.page-wrap .glass:nth-child(7) { animation-delay: 0.7s; }
+
+.accent-line {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, #00c8e0, transparent);
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1.1rem;
+    color: #7ee8ff;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(0, 200, 240, 0.25);
+}
+
+/* ── MOBILE ── */
+/* FIX: 32px padding each side on a 375px screen leaves very little room */
+@media (max-width: 600px) {
+    .page-wrap {
+        padding: 20px 12px 40px;  /* FIX: tighter outer padding */
+        gap: 20px;
+    }
+
+    .glass {
+        padding: 20px 16px;       /* FIX: was 32px — reclaims ~64px of width */
+        border-radius: 12px;
+    }
+}

@@ -1,0 +1,14 @@
+/* ══════════════════════════════════════════
+   MAIN.CSS  —  Entry point
+   Imports all partials in order
+══════════════════════════════════════════ */
+
+@import url('base.css');
+@import url('cursor.css');
+@import url('navbar.css');
+@import url('layout.css');
+@import url('hero.css');
+@import url('showcase.css');
+@import url('contact.css');
+@import url('gallery.css');
+@import url('lightbox.css');

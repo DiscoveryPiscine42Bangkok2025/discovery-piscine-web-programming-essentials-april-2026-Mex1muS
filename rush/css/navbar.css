@@ -1,0 +1,85 @@
+ul {
+  display: flex; /*จัดแนวนอน*/
+  justify-content: center; /*จัดกลาง*/
+  flex-wrap: wrap; /*ทําให้เมนูเรียงลงมา*/
+  list-style-type: none; /*ลบจุด*/
+  margin: 0; 
+  padding: 8px 10px; /*พื้นที่*/
+
+  background: linear-gradient(
+    135deg,
+    rgba(15, 32, 39, 0.55),
+    rgba(32, 58, 67, 0.55),
+    rgba(44, 83, 100, 0.55)
+  );
+
+  backdrop-filter: blur(14px); /*ทำให้เมนูโปร่งใส*/
+  -webkit-backdrop-filter: blur(14px); /*ทำให้เมนูโปร่งใส*/
+
+  border-bottom: 1px solid rgba(0, 180, 210, 0.18); /*เส้นใต้*/
+  box-shadow: 0 2px 24px rgba(0, 30, 80, 0.45);
+
+  position: sticky; /*ทำให้เมนูติดอยู่ที่ขอบบนสุดของหน้าจอเสมอ*/
+  top: 0;
+  z-index: 200; /*on top*/
+  animation: slideDown 0.6s ease-out; /*ทําให้เมนูเลื่อนลงมา*/
+}
+  
+ul li {
+    display: flex;
+    align-items: center;
+}
+
+ul li a {
+    display: flex;  /*จัดแนวนอน*/
+    align-items: center; /*จัดกลาง*/
+    color: rgba(200, 225, 255, 0.85);
+    padding: 14px 16px; /*พื้นที่คลิก*/
+    text-decoration: none; /*ลบขีดเส้นใต้*/
+    position: relative; 
+    transition: color 0.4s ease, background 0.4s ease;
+    letter-spacing: 0.04em;
+    font-size: 1.15rem;
+    border-radius: 10%;
+}
+
+/* Shimmer underline */
+ul li a::after {
+    content: ''; /*สร้างเส้นใต้*/
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00c8e0, #7ee8f8, transparent); /*เส้นใต้*/
+    background-size: 300% 100%; 
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+ul li a:hover {
+    color: #b8f0ff;
+    background: rgba(0, 140, 180, 0.15);
+}
+
+ul li a:hover::after {
+    opacity: 1;
+    animation: shimmer111 2s linear infinite;
+}
+
+@keyframes shimmer111 {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 600px) {
+    ul li a {
+        padding: 8px 10px;        /* FIX: smaller tap targets to fit screen */
+        font-size: 0.9rem;        /* FIX: smaller font so links don't overflow */
+    }
+}
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}

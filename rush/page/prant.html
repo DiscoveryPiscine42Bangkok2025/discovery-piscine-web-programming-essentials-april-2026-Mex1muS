@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<!-- Lightbox -->
+<div id="lightbox">
+    <button id="lightbox-close">✕</button>
+    <img id="lightbox-img" src="" alt="">
+    <div id="lightbox-caption"></div>
+</div>
+
+<!-- Gallery Side Panel -->
+<div id="gallery-panel">
+    <div class="gallery-header">
+        <span>✦ SHOWCASE</span>
+        <button id="close-gallery">✕</button>
+    </div>
+    <div class="gallery-grid">
+        <div class="gallery-item" style="--i:0">
+            <img src="https://cdn.imgchest.com/files/7b1e7e425e3f.jpeg" alt="showcase 1">
+            <div class="gallery-overlay">Project 1</div>
+        </div>
+        <div class="gallery-item" style="--i:1">
+            <img src="https://cdn.imgchest.com/files/7b1e7e425e3f.jpeg" alt="showcase 2">
+            <div class="gallery-overlay">Project 2</div>
+        </div>
+        <div class="gallery-item" style="--i:2">
+            <img src="https://cdn.imgchest.com/files/7b1e7e425e3f.jpeg" alt="showcase 3">
+            <div class="gallery-overlay">Project 3</div>
+        </div>
+        <div class="gallery-item" style="--i:3">
+            <img src="https://cdn.imgchest.com/files/7b1e7e425e3f.jpeg" alt="showcase 4">
+            <div class="gallery-overlay">Project 4</div>
+        </div>
+    </div>
+</div>
+<div id="gallery-backdrop"></div>
+
+<body>
+
+    <ul>
+        <li><a href="../index.html">← Back</a></li>
+        <li><a href="#showcase">Showcase</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="page-wrap">
+
+        <div class="glass hero">
+            <img src="https://cdn.imgchest.com/files/be9676806c31.jpg" alt="Prant">
+            <div class="hero-text">
+                <h1>Prant</h1>
+                <p>plekpray &nbsp;·&nbsp; Developer &amp; Creator</p>
+            </div>
+        </div>
+
+        <!-- Showcase -->
+        <div class="glass" id="showcase">
+            <p class="section-title">✦ Personal Interest</p>
+            <div class="accent-line"></div>
+            <div class="showcase-grid">
+                <div class="showcase-item">
+                    <h4>Programming &amp; Coding</h4>
+                    <div class="meta">2023 – Present</div>
+                    <p>I have a strong interest in programming and enjoy learning how software and systems work behind the scenes.
+                        I spend time practicing coding using languages such as Python and JavaScript, building small projects, and exploring new technologies related to backend development and automation.
+                        Through coding, I develop problem-solving skills and logical thinking.</p>
+                </div>
+                <div class="showcase-item">
+                    <h4>Gaming &amp; Technology Exploration</h4>
+                    <div class="meta">Personal Interest</div>
+                    <p>I enjoy playing video games as a way to relax and challenge my strategic thinking.
+                        Gaming has also increased my interest in computer hardware, performance optimization, and how games are developed.
+                        I like exploring game mechanics, system performance, and new technology trends in the gaming industry.</p>
+                </div>
+                <div class="showcase-item">
+                    <h4>Reading Manga &amp; Creative Thinking</h4>
+                    <div class="meta">Personal Hobby</div>
+                    <p>I enjoy reading manga in my free time, which helps improve my imagination and creativity.
+                        Reading stories with complex characters and world-building inspires new ideas and enhances my understanding of storytelling and visual design.
+                        This hobby also helps me relax and maintain a balanced lifestyle.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="glass" id="education">
+            <p class="section-title">✦ Education</p>
+            <div class="accent-line"></div>
+            <div class="showcase-grid">
+                <div class="showcase-item">
+                    <h4>Satit Prasarnmit Demonstration School (Secondary)</h4>
+                    <div class="meta">Srinakharinwirot University &nbsp;·&nbsp; Grade 11 (M.5)</div>
+                    <p>Currently studying at one of Thailand's leading demonstration schools affiliated with
+                        Srinakharinwirot University. Focused on science and mathematics, with an active interest in
+                        computer science and technology.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="glass" id="skills">
+            <p class="section-title">✦ Skills</p>
+            <div class="accent-line"></div>
+            <div class="skills-wrap">
+                <span class="skill-tag">
+                    Python <i class="fa-brands fa-python"></i>
+                </span>
+                <span class="skill-tag">
+                    Node.js <i class="fa-brands fa-node-js"></i>
+                </span>
+                <span class="skill-tag">
+                    REST APIs <i class="fa-solid fa-gears api-icon"></i>
+                </span>
+                <span class="skill-tag">
+                    Git &amp; GitHub <i class="fa-brands fa-github"></i>
+                </span>
+                <span class="skill-tag">
+                    Data Analysis <i class="fas fa-database"></i>
+                </span>
+                <span class="skill-tag">
+                    SQL <i class="bi bi-filetype-sql"></i>
+                </span>
+                <span class="skill-tag">
+                    HTML &amp; CSS <i class="fa-brands fa-html5"></i>
+                </span>
+                <span class="skill-tag">
+                    JavaScript <i class="fa-brands fa-js"></i>
+                </span>
+                <span class="skill-tag">
+                    Team Work <i class="fa-solid fa-arrows-down-to-people"></i>
+                </span>
+                <span class="skill-tag">
+                    Problem Solving <i class="fa-solid fa-lightbulb"></i>
+                </span>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="glass" id="projects">
+            <p class="section-title">✦ Projects</p>
+            <div class="accent-line"></div>
+            <div class="showcase-grid">
+                <div class="showcase-item">
+                    <h4>Backend Development</h4>
+                    <div class="meta">2023 – Present</div>
+                    <p>Built backend systems using Node.js and Python for personal and academic projects.
+                        Created REST APIs and connected databases to support web applications.</p>
+                </div>
+                <div class="showcase-item">
+                    <h4>Data &amp; Analytics</h4>
+                    <div class="meta">Academic &amp; Personal Projects</div>
+                    <p>Applied data analysis and visualization techniques to extract insights from datasets. Used tools
+                        like Python and spreadsheets to present findings clearly.</p>
+                </div>
+                <div class="showcase-item">
+                    <h4>Personal Portfolio Site</h4>
+                    <div class="meta">2024 – Present</div>
+                    <p>Designed and built this personal portfolio website from scratch using HTML, CSS, and JavaScript.
+                        Focused on clean UI, smooth animations, and a responsive layout.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="glass" id="experience">
+            <p class="section-title">✦ Experience</p>
+            <div class="accent-line"></div>
+            <div class="showcase-grid">
+                <div class="showcase-item">
+                    <h4>Team Collaboration</h4>
+                    <div class="meta">Group Projects</div>
+                    <p>Worked in team environments using Git for version control. Contributed to planning, reviewing
+                        code, and delivering projects on schedule.</p>
+                </div>
+                <div class="showcase-item">
+                    <h4>Academic Research &amp; Presentations</h4>
+                    <div class="meta">School Projects</div>
+                    <p>Conducted research and presented findings on technical topics as part of school coursework.
+                        Developed skills in communication, critical thinking, and structured reporting.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass" id="contact">
+            <p class="section-title">✦ Contact</p>
+            <div class="accent-line"></div>
+            <div class="contact-links">
+                <a href="https://github.com/Mex1muS" target="_blank" class="contact-link"><i
+                        class="fa-brands fa-github"></i> GitHub</a>
+                <a href="https://www.facebook.com/lekpprant" target="_blank" class="contact-link"><i
+                        class="fa-brands fa-facebook"></i> Facebook</a>
+                <a href="https://www.instagram.com/dobalid0/" target="_blank" class="contact-link"><i
+                        class="fa-brands fa-instagram"></i> Instagram</a>
+                <a href="#" class="contact-link"><i class="fa-brands fa-twitter"></i> Twitter</a>
+                <a href="#" class="contact-link"><i class="fa fa-envelope"></i> Email</a>
+            </div>
+        </div>
+
+        <div><a href="../index.html" class="back-btn">← Back to Home</a></div>
+
+    </div>
+
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

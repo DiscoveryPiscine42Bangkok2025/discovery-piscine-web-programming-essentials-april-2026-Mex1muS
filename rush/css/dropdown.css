@@ -1,0 +1,133 @@
+.dropdown-info {
+    position: absolute; /*ตําแหน่ง*/
+    top: 100%; 
+    left: 50%; 
+    transform: translateX(-50%); /*การจัดกลาง*/
+    background: rgba(5, 10, 38, 0.78); /*พื้นหลัง*/
+    backdrop-filter: blur(20px); /*ทำให้เมนูโปร่งใส*/
+    -webkit-backdrop-filter: blur(20px); /*ทำให้เมนูโปร่งใส*/
+    border: 1px solid rgba(0, 170, 210, 0.22); /*เส้นใต้*/
+    box-shadow: 0 8px 32px rgba(0, 20, 70, 0.6), 0 0 0 1px rgba(0, 120, 180, 0.12);
+    color: rgba(200, 230, 255, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    width: 80%;
+    z-index: 10; /*บนสุด*/
+
+    opacity: 0;
+    visibility: hidden; /*ซ่อน*/
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none; /*ไม่ให้คลิก*/
+}
+
+/* Bridge gap */
+.dropdown-info::before {
+    content: ""; /*ใบสั่งเกิด*/
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: transparent;
+}
+
+/* Cyan top accent line */
+.dropdown-info::after {
+    content: ""; /*ใบสั่งเกิด*/
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 200, 240, 0.5), transparent); /*ลําดับสี*/
+    border-radius: 1px;
+}
+
+/* ── DESKTOP: show below on hover ── */
+@media (hover: hover) and (pointer: fine) {
+    .profile-container:hover .dropdown-info {
+        opacity: 1; /*ทําให้เมนูโปร่งใส*/
+        visibility: visible; /*ทําให้เมนูโปร่งใส*/
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(10px);
+    }
+}
+
+/* ── SHOW STATE (Active or Force-Show) ── */
+.profile-container.active .dropdown-info,
+.profile-container.force-show .dropdown-info {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /*ตอบสนอง*/
+    transform: translateX(-50%) translateY(10px);
+}
+
+/* ── MOBILE: overlay centered ON the image instead of below it ── */
+@media (hover: none),
+(pointer: coarse) {
+    .dropdown-info {
+        /* Center over the image, not below it */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        /* No ::before bridge needed on mobile */
+    }
+
+    .profile-container.active .dropdown-info,
+    .profile-container.force-show .dropdown-info {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translate(-50%, -50%);
+        /* stay centered, no Y shift */
+    }
+}
+
+.dropdown-info h3 {
+    margin: 0 0 4px 0;
+    color: #7ee8ff;
+    letter-spacing: 0.06em;
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.dropdown-info p {
+    margin: 6px 0 0 0;
+    color: rgba(180, 215, 240, 0.8);
+    font-size: 0.9rem;
+}
+
+.dropdown-info a i {
+    color: rgba(160, 210, 240, 0.75);
+    margin: 0 6px;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.dropdown-info a i:hover {
+    color: #7ee8ff;
+}
+
+.see-more-btn {
+    display: inline-block;
+    background: rgba(0, 120, 160, 0.35);
+    border: 1px solid rgba(0, 180, 220, 0.35);
+    color: #b8f0ff;
+    padding: 8px 18px;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 0.88rem;
+    letter-spacing: 0.05em;
+    transition: background 0.3s, border-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.see-more-btn:hover {
+    background: rgba(0, 160, 210, 0.5);
+    border-color: rgba(0, 210, 255, 0.6);
+    color: #ffffff;
+    box-shadow: 0 0 14px rgba(0, 180, 230, 0.35);
+}
